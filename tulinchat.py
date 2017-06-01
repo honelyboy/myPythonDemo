@@ -89,5 +89,5 @@ def tulin_pic_reply(msg):
 
 
 # 为了让实验过程更加方便（修改程序不用多次扫码），我们使用热启动
-itchat.auto_login(enableCmdQR=True)
+itchat.auto_login(enableCmdQR=2)
 itchat.run()
