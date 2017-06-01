@@ -64,6 +64,10 @@ def tuling_reply(msg):
         reply = get_response(msg['Text'])
         return reply or defaultReply
 
+    if '@b4df37e7183ad91c569e7ec8f19ee4154d5764058a9d09ae1613d248b6022876' == msg['FromUserName']:
+        reply = get_response(msg['Text'])
+        return reply or defaultReply
+
     # if '@@338c554136a1f8d28d72ef30e4e1e5102bc8f96ca51f6e765833a2d9b04dd13d' == msg['FromUserName']:
     #
     #     reply = get_response(msg['Text'])
