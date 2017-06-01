@@ -54,7 +54,7 @@ def tuling_reply(msg):
         # reply = get_joke_response(msg['Text'])
         return reply or defaultReply
 
-    if '@@338c554136a1f8d28d72ef30e4e1e5102bc8f96ca51f6e765833a2d9b04dd13d' == msg['FromUserName']:
+    if '@dfeceb58b63f3487b9ca926d764d566484570628497406bcab1a83a80efd3e04' == msg['FromUserName']:
         reply = get_joke_response(msg['Text'])
 
         return reply or defaultReply
@@ -77,10 +77,10 @@ def tuling_reply(msg):
     #     reply = get_response(msg['Text'])
     #     return reply or defaultReply
     # 如果图灵Key出现问题，那么reply将会是None
-    # reply = get_response(msg['Text'])
+    reply = get_response(msg['Text'])
     # a or b的意思是，如果a有内容，那么返回a，否则返回b
     # 有内容一般就是指非空或者非None，你可以用`if a: print('True')`来测试
-    # return reply or defaultReply
+    return reply or defaultReply
 
 @itchat.msg_register(itchat.content.PICTURE,isFriendChat=True, isGroupChat=True, isMpChat=True)
 def tulin_pic_reply(msg):
