@@ -1,0 +1,27 @@
+import pymysql.cursors
+
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='ky123456',
+                             db='mywiki',
+                             charset='utf8mb4')
+
+try:
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `user` (`name`, `age`,`phone`,`email`) VALUES (%s,%s,%s,%s)"
+        cursor.execute(sql, ('kkkey','14','15101269597','463331090@qq.com'))
+        connection.commit()
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    # connection.commit()
+
+    # with connection.cursor() as cursor:
+    #     # Read a single record
+    #     sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+    #     cursor.execute(sql, ('webmaster@python.org',))
+    #     result = cursor.fetchone()
+    #     print(result)
+finally:
+    connection.close()
